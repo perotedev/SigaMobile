@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SigaMobile</string>
+    <string name="titulo">Meu Aplicativo</string>
+    <string name="texto">Meu Texto</string>
 </resources>
