@@ -1,0 +1,133 @@
+@startuml
+scale 2
+skinparam PackageStyle rect
+
+title SigaMobile Model Classes
+' em sexo true é masculino e false é feminino
+class Pessoa{
+    + _id: ObjectID
+    + nome: String
+    + nascimento: UTCDateTime
+    + rg: String
+    + cpf: String
+    + sexo: Boolean
+    + est_civil: String
+    + naturaliade: String
+    + raca: String
+    + fator_rh: String
+    + email: String
+    + conta_banco_id: ObjectID
+    + endereco_id: ObjectID
+    + telefone_id: ObjectID
+}
+
+class ContaBanco{
+    + _id: ObjectID
+    + num_conta: String
+    + operacao: String
+    + instituicao: String
+}
+
+class Endereco{
+    + _id: ObjectID
+    + logradouro: String
+    + numero: Integer
+    + bairro: String
+    + cidade: String
+    + estado: String
+    + cep: Integer
+    + complemento: String
+}
+
+class Telefone{
+    + _id: ObjectID
+    + tipo: String
+    + numero: Integer
+}
+
+class Aluno{
+    + _id: ObjectID
+    + matricula: Integer
+    + pessoa_id: ObjectID
+    + curso_id: ObjectID
+}
+
+class Professor{
+    + _id: ObjectID
+    + pessoa_id: ObejectID
+    + coordena: Boolean
+}
+
+' tipo pode ser Graduação, Técnico, Ensino Médio, etc...
+class Curso{
+    + _id: ObjectID
+    + nome: String
+    + tipo: String
+    + coordenador_id: ObjectID
+}
+
+' aqui Turma é igual a Disciplina
+class Turma{
+    + _id: ObjectID
+    + nome: String
+    + professor_id: ObjectID
+    + curso_id: ObjectID
+}
+
+' aqui tipo_nota é AV1, AV2 e PF
+class NotaAluno{
+    + _id: ObejectID
+    + aluno_id: ObjectID
+    + turma_id: ObejectID
+    + nota: Float
+    + tipo_nota: String
+}
+
+class HorarioTurma{
+    + _id: ObejectID
+    + turma_id: ObejectID
+    + hora_inicio: String
+    + hora_final: String
+}
+
+class TarefaTurma{
+    + _id: ObjectID
+    + turma_id: ObejectID
+    + descricao: String
+    + created_at: UTCDataTime
+    + finish_at: UTCDataTime
+}
+
+Aluno -down-> Pessoa
+Professor -down-> Pessoa
+
+Pessoa "1" *-right- "1" ContaBanco: contains
+Pessoa "1" *-left- "1" Endereco: contains
+Pessoa "1" *-down- "1" Telefone: contains
+Professor "1" *-right- "many" Turma: contains
+Aluno "many" *-left- "many" Turma: contains
+Aluno "1" *-up- "many" NotaAluno: contains
+Turma "1" *-up- "many" HorarioTurma: contains
+Turma "1" *-up- "many" TarefaTurma: contains
+Curso "many" *-left- "many" Aluno: contains
+
+newpage
+title SigaMobile Controllers
+class LoginController{
+
+}
+
+class HistoricoEscolarController{
+
+}
+
+class DadosPessoaisController{
+
+}
+
+class AlunoNotasController{
+    
+}
+
+
+@enduml
