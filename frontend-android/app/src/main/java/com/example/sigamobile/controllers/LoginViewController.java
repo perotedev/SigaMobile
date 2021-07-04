@@ -1,21 +1,32 @@
 package com.example.sigamobile.controllers;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.sigamobile.R;
-import com.example.sigamobile.models.Student;
 
-public class SplashViewController {
+import com.example.sigamobile.R;
+
+public class LoginViewController {
     private Context context;
 
-    public SplashViewController(Context context){
+    public LoginViewController(Context context){
         this.context = context;
     }
 
-//    public void textEdit(TextView textView){
-//        textView.setText(R.string.texto);
-//    }
+    public void close(ImageView close){
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((Activity) context).finish();
+            }
+        });
+    }
+
+    public void setTitleView(TextView titleView){
+        titleView.setText(context.getString(R.string.title_login_view));
+    }
 //
 //    public void buttomContinue(TextView textView){
 //        textView.setOnClickListener(new View.OnClickListener() {

@@ -5,6 +5,7 @@
     <string name="studant_name_test">Aluno Aleatório</string>
 
     <!--  LOGIN VIEW  -->
+    <string name="title_login_view">Login</string>
     <string name="user_label">Usuário</string>
     <string name="user_hint">digite seu usuário</string>
     <string name="password_label">Senha</string>

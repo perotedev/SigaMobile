@@ -12,7 +12,7 @@
     />
 
     <ImageView
-        android:id="@+id/imageButton"
+        android:id="@+id/btn_close_toolbar"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@mipmap/exit_icon"
