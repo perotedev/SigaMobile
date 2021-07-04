@@ -13,8 +13,13 @@ public class LoginView extends AppCompatActivity {
         setContentView(R.layout.activity_login_view);
         LoginViewController controller = new LoginViewController(this);
 
-        controller.close(findViewById(R.id.btn_close_toolbar));
         controller.setTitleView(findViewById(R.id.toolbar_title));
-
+        controller.close(findViewById(R.id.btn_close_toolbar));
+        controller.passwordForget(findViewById(R.id.password_forget));
+        controller.login(
+                findViewById(R.id.btn_login),
+                findViewById(R.id.edit_text_user),
+                findViewById(R.id.edit_text_password)
+        );
     }
 }

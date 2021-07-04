@@ -13,6 +13,7 @@
     <string name="password_forget">Esqueci a senha</string>
     <string name="first_access">Primeiro acesso</string>
     <string name="btn_login">Entrar</string>
+    <string name="login_fail">Usuário ou senha errado!</string>
 
 
 </resources>
