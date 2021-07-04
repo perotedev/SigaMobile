@@ -1,5 +1,17 @@
 <resources>
+    <!--  GLOBALS  -->
     <string name="app_name">SigaMobile</string>
-    <string name="titulo">Meu Aplicativo</string>
-    <string name="texto">Meu Texto</string>
+    <string name="toolbar_title">My View</string>
+    <string name="studant_name_test">Aluno Aleatório</string>
+
+    <!--  LOGIN VIEW  -->
+    <string name="user_label">Usuário</string>
+    <string name="user_hint">digite seu usuário</string>
+    <string name="password_label">Senha</string>
+    <string name="password_hint">digite sua senha</string>
+    <string name="password_forget">Esqueci a senha</string>
+    <string name="first_access">Primeiro acesso</string>
+    <string name="btn_login">Entrar</string>
+
+
 </resources>
