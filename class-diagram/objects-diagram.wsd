@@ -103,7 +103,7 @@ Professor -down-> Pessoa
 
 Pessoa "1" *-right- "1" ContaBanco: contains
 Pessoa "1" *-left- "1" Endereco: contains
-Pessoa "1" *-down- "1" Telefone: contains
+Pessoa "1" *-down- "many" Telefone: contains
 Professor "1" *-right- "many" Turma: contains
 Aluno "many" *-left- "many" Turma: contains
 Aluno "1" *-up- "many" NotaAluno: contains
@@ -126,7 +126,7 @@ class DadosPessoaisController{
 }
 
 class AlunoNotasController{
-    
+
 }
 
 
