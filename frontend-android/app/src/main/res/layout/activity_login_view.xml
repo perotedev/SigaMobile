@@ -107,13 +107,13 @@
 
         <TextView
             android:id="@+id/password_forget"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/password_forget"
             android:layout_below="@+id/password_group"
             android:textColor="@color/default_text"
             android:textSize="20sp"
-            android:gravity="end"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="10dp"
             android:layout_marginHorizontal="32dp"
         />
