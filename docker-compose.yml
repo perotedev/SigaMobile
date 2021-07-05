@@ -15,7 +15,7 @@ services:
     volumes:
       - "./database-scripts:/database-scripts"
 
-  app:
+  app-login:
     build:
       context: ./api/api-login
       dockerfile: Dockerfile
