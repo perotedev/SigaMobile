@@ -8,6 +8,6 @@ export class UsersService {
     constructor(@InjectModel(User.name) private readonly userModel: Model<User>) {} // injeta no mongoDB
 
     async findUser(username: string) {
-        return this.userModel.findOne({ username }).exec();
+        return this.userModel.findOne({ 'username': username }).exec();
     }
 }
