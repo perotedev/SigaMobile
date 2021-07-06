@@ -7,7 +7,30 @@ import { User } from './user.schema';
 export class UsersService {
     constructor(@InjectModel(User.name) private readonly userModel: Model<User>) {} // injeta no mongoDB
 
+    // Only to JWT token
     async findUser(username: string) {
         return this.userModel.findOne({ 'username': username }).exec();
+    }
+
+    async getAll() {
+    return await this.userModel.find().exec();
+    }
+
+    async getById(id: string) {
+    return await this.userModel.findById(id).exec();
+    }
+
+    async create(user: User) {
+    const createdUser = new this.userModel(user);
+    return await createdUser.save();
+    }
+
+    async update(id: string, user: User) {
+    await this.userModel.updateOne({ _id: id}, user).exec();
+    return this.getById(id);
+    }
+
+    async delete(id: string) {
+    return await this.userModel.deleteOne({ _id: id}).exec();
     }
 }
