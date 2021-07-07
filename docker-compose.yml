@@ -15,7 +15,7 @@ services:
     volumes:
       - "./database-scripts:/database-scripts"
 
-  app-login:
+  login_api:
     build:
       context: ./api/api-login
       dockerfile: Dockerfile
@@ -24,7 +24,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./api/api-login:/home/node/app
+      - ./api/login_api:/home/node/app
     tty: true
     depends_on:
       - mongo
