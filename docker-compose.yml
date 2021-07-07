@@ -17,7 +17,7 @@ services:
 
   login_api:
     build:
-      context: ./api/api-login
+      context: ./api/login_api
       dockerfile: Dockerfile
     container_name: api-login
     entrypoint: ./.docker/entrypoint.sh
