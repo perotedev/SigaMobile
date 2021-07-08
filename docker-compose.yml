@@ -28,3 +28,17 @@ services:
     tty: true
     depends_on:
       - mongo
+
+  main_app:
+    build:
+      context: ./api/main_siga_mobile
+      dockerfile: Dockerfile
+    container_name: main_app
+    entrypoint: ./.docker/entrypoint.sh
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./api/main_siga_mobile:/home/node/app
+    tty: true
+    depends_on:
+      - mongo
