@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package users;
+
+service UsersService {
+    rpc Create(UsersRequest) returns(UsersResponse){}
+    // rpc Update () returns (){};
+}
+
+message UsersRequest {
+    string username = 1;
+    string passwordHash = 2;
+    string studentId = 3;
+}
+
+message UsersResponse {
+    string _id = 1;
+    string username = 2;
+    string studentId = 3;
+}

@@ -1,7 +1,6 @@
 import { Metadata, ServerUnaryCall } from '@grpc/grpc-js';
 import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
-import { User } from '../user.schema';
 import { UsersService } from '../users.service';
 
 @Controller()

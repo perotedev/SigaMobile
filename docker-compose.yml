@@ -29,6 +29,20 @@ services:
     depends_on:
       - mongo
 
+  client-siga:
+    build:
+      context: ./api/siga-client
+      dockerfile: Dockerfile
+    container_name: siga-client
+    entrypoint: ./.docker/entrypoint.sh
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./api/siga-client:/home/node/app
+    tty: true
+    depends_on:
+      - mongo
+
   grpc-test:
     image: gusaul/grpcox:latest
     ports:
