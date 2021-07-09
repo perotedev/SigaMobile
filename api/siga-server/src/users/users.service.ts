@@ -35,7 +35,11 @@ export class UsersService {
     }
 
     async delete(id: string) {
-        return await this.userModel.deleteOne({ _id: id}).exec();
+        if(await this.userModel.deleteOne({ _id: id}).exec()){
+            return [{ 'status': 'YES', 'message': 'USUÁRIO DELETADO COM SUCESSO!' }]
+        } else {
+            return [{ 'status': 'NO', 'message': 'ERRO AO DELETAR USUÁRIO' }]
+        };
     }
 
     async createPasswordHash(password: string){

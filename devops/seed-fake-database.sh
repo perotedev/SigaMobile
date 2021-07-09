@@ -10,10 +10,10 @@ docker-compose exec mongo /bin/bash -c \
     'exec mongo sigadatabase -u root -p example --authenticationDatabase admin ../../database-scripts/fake-peoples.js'
 echo -e "$COLLECTION_FINISH Pessoa ✅\n"
 
-# Popula Students
+# Popula Studants
 docker-compose exec mongo /bin/bash -c \
-    'exec mongo sigadatabase -u root -p example --authenticationDatabase admin ../../database-scripts/fake-students.js'
-echo -e "$COLLECTION_FINISH students ✅\n"
+    'exec mongo sigadatabase -u root -p example --authenticationDatabase admin ../../database-scripts/fake-studants.js'
+echo -e "$COLLECTION_FINISH studants ✅\n"
 
 # Popula Tasks
 docker-compose exec mongo /bin/bash -c \

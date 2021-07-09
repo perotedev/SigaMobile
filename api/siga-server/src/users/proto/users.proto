@@ -1,20 +1,46 @@
 syntax = "proto3";
 
+import "google/protobuf/empty.proto";
+
 package users;
 
+// Services Declarations
 service UsersService {
     rpc Create(UsersRequest) returns(UsersResponse){}
-    // rpc Update () returns (){};
+    rpc FindAll(google.protobuf.Empty) returns(UsersResponseAll){}
+    rpc Update (UsersUpdateRequest) returns (UsersResponse){};
+    rpc GetById (UsersById) returns (UsersResponse);
+    rpc Delete (UsersById) returns (UsersDeleteResponse);
 }
 
 message UsersRequest {
     string username = 1;
     string passwordHash = 2;
-    string studentId = 3;
+    string studantId = 3;
+}
+
+message UsersUpdateRequest {
+    string id = 1;
+    string username = 2;
+    string passwordHash = 3;
+    string studantId = 4;
+}
+
+message UsersById {
+    string id = 1;
 }
 
 message UsersResponse {
     string _id = 1;
     string username = 2;
-    string studentId = 3;
+    string studantId = 3;
+}
+
+message UsersResponseAll {
+    repeated UsersResponse users = 1;
+}
+
+message UsersDeleteResponse {
+    string status = 1;
+    string message = 2;
 }

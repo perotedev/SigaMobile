@@ -12,16 +12,16 @@ export class UsersGrpcClientController implements OnModuleInit {
     }
 
     // // @UseGuards(JwtAuthGuard)
-    // @Get()
-    // getAll(): Promise<User[]> {
-    //     return this.usersService.getAll();
-    // }
+    @Get()
+    findAll(data){
+        return this.usersGrpcService.findAll(data).toPromise();
+    }
 
     // // @UseGuards(JwtAuthGuard)
-    // @Get(':id')
-    // getById(@Param('id') id: string): Promise<User> {
-    //     return this.usersService.getById(id);
-    // }
+    @Get(':id')
+    getById(@Param('id') id: string) {
+        return this.usersGrpcService.getById(id).toPromise();
+    }
 
     // @UseGuards(JwtAuthGuard)
     @Post()
@@ -30,14 +30,14 @@ export class UsersGrpcClientController implements OnModuleInit {
     }
 
     // // @UseGuards(JwtAuthGuard)
-    // @Put()
-    // update(@Body('_id') id: string, @Body() user: User): Promise<User> {
-    //     return this.usersService.update(id, user);
-    // }
+    @Put()
+    update(@Body('_id') id: string, @Body() data) {
+        return this.usersGrpcService.update(id, data).toPromise();
+    }
 
     // // @UseGuards(JwtAuthGuard)
-    // @Delete()
-    // delete(@Body('id') id: string){
-    //     this.usersService.delete(id);
-    // }
+    @Delete()
+    delete(@Body('id') id: string){
+        this.usersGrpcService.delete(id).toPromise();
+    }
 }

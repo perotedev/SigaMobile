@@ -10,7 +10,7 @@ export class User extends Document{
   passwordHash: string;
 
   @Prop({type: SchemaTypes.ObjectId , ref: 'Student', required: true })
-  studentId: Types.ObjectId;
+  studantId: Types.ObjectId;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
