@@ -2,7 +2,7 @@ import { Body, Controller, Delete, Get, Inject, OnModuleInit, Param, Post, Put, 
 import { ClientGrpc } from '@nestjs/microservices';
 import { UsersGrpcService } from './users-grpc-interface';
 
-@Controller('users-grpc-client')
+@Controller('users')
 export class UsersGrpcClientController implements OnModuleInit {
     constructor(@Inject('USERS_PACKAGE') private client: ClientGrpc){}
     private usersGrpcService;
