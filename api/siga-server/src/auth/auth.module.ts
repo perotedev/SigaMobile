@@ -1,3 +1,4 @@
+import { JwtGrpcServerController } from './jwt-grpc-server/jwt-grpc-server.controller';
 
 import { JwtStrategy } from './jwt/jwt.strategy';
 import { AuthController } from './auth.controller';
@@ -28,7 +29,8 @@ import { LocalStrategy } from './local.strategy';
     JwtModule
   ],
   controllers: [
-    AuthController
+    AuthController,
+    JwtGrpcServerController
   ]
 })
 export class AuthModule {}

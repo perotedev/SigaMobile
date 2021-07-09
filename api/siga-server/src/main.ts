@@ -18,6 +18,15 @@ async function bootstrap() {
     }
   });
 
+  app.connectMicroservice<MicroserviceOptions>({
+    transport: Transport.GRPC,
+    options: {
+      url: '0.0.0.0:50061',
+      package: 'auth',
+      protoPath: join(__dirname, '/auth/proto/auth.proto'),
+    }
+  });
+
   await app.startAllMicroservicesAsync();
 }
 bootstrap();
