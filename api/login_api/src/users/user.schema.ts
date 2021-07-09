@@ -7,10 +7,10 @@ export class User extends Document{
   username: string;
 
   @Prop({ required: true })
-  password_hash: string;
+  passwordHash: string;
 
   @Prop({type: SchemaTypes.ObjectId , ref: 'Student', required: true })
-  student_id: Types.ObjectId;
+  studentId: Types.ObjectId;
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);

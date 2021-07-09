@@ -24,12 +24,12 @@ export class UsersService {
 
     async create(user: User) {
         const createdUser = new this.userModel(user);
-        createdUser.password_hash = await this.createPasswordHash(createdUser.password_hash);
+        createdUser.passwordHash = await this.createPasswordHash(createdUser.passwordHash);
         return await createdUser.save();
     }
 
     async update(id: string, user: User) {
-        user.password_hash = await this.createPasswordHash(user.password_hash);
+        user.passwordHash = await this.createPasswordHash(user.passwordHash);
         await this.userModel.updateOne({ _id: id}, user).exec();
         return this.getById(id);
     }

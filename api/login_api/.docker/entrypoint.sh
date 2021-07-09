@@ -2,10 +2,12 @@
 
 cd /home/node/app
 
-# instala o mogoose
+# instala o npm na raiz do app
 npm install
-npm install --save @nestjs/mongoose mongoose
-npm install --save-dev @types/mongoose
+
+# instala o mogoose
+npm install --save @nestjs/mongoose mongoose --force
+npm install --save-dev @types/mongoose --force
 
 # instala dependência para o JWT
 npm install --save @nestjs/passport passport passport-local
@@ -16,5 +18,9 @@ npm install --save-dev @types/passport-jwt
 # instala dependência para encriptar senha
 npm i bcrypt
 npm i -D @types/bcrypt
+
+# instala dependências para o gRPC
+npm i --save @nestjs/microservices --legacy-peer-deps
+npm i --save @grpc/grpc-js @grpc/proto-loader
 
 npm run start:dev

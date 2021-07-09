@@ -15,7 +15,7 @@ services:
     volumes:
       - "./database-scripts:/database-scripts"
 
-  login_api:
+  app-siga:
     build:
       context: ./api/login_api
       dockerfile: Dockerfile
@@ -29,16 +29,7 @@ services:
     depends_on:
       - mongo
 
-  main_app:
-    build:
-      context: ./api/main_siga_mobile
-      dockerfile: Dockerfile
-    container_name: main_app
-    entrypoint: ./.docker/entrypoint.sh
+  grpc-test:
+    image: gusaul/grpcox:latest
     ports:
-      - "4000:4000"
-    volumes:
-      - ./api/main_siga_mobile:/home/node/app
-    tty: true
-    depends_on:
-      - mongo
+      - 6969:6969

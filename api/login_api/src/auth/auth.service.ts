@@ -12,10 +12,10 @@ export class AuthService {
 
   async validateUser(username: string, password: string): Promise<any> {
     const user = await this.usersService.findUser(username);
-    const hash = await this.checkPasswordHash(password, user.password_hash);
+    const hash = await this.checkPasswordHash(password, user.passwordHash);
     if (user && hash) {
-      const { _id, username, student_id } = user;
-      return {_id, username, student_id };
+      const { _id, username, studentId } = user;
+      return {_id, username, studentId };
     }
     return null;
   }
