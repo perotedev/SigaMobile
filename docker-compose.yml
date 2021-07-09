@@ -44,6 +44,7 @@ services:
       - mongo
 
   grpc-test:
+    container_name: siga-grpcox
     image: gusaul/grpcox:latest
     ports:
       - 6969:6969
