@@ -3,7 +3,7 @@ version: '3.1'
 
 services:
   mongo:
-    container_name: database-sigamobile
+    container_name: siga-database
     image: mongo
     restart: always
     environment:
@@ -17,14 +17,14 @@ services:
 
   app-siga:
     build:
-      context: ./api/login_api
+      context: ./api/siga-server
       dockerfile: Dockerfile
-    container_name: api-login
+    container_name: siga-server
     entrypoint: ./.docker/entrypoint.sh
     ports:
       - "3000:3000"
     volumes:
-      - ./api/login_api:/home/node/app
+      - ./api/siga-server:/home/node/app
     tty: true
     depends_on:
       - mongo
