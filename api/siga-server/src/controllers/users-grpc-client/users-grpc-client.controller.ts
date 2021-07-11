@@ -1,5 +1,6 @@
 import { Body, Controller, Delete, Get, Inject, OnModuleInit, Param, Post, Put, UseGuards } from '@nestjs/common';
 import { ClientGrpc } from '@nestjs/microservices';
+import { JwtAuthGuard } from 'src/services/auth/jwt/jwt-auth.guard';
 import { UsersGrpcService } from './users-grpc-interface';
 
 @Controller('users')
@@ -11,32 +12,32 @@ export class UsersGrpcClientController implements OnModuleInit {
         this.usersGrpcService = this.client.getService<UsersGrpcService>('UsersService');
     }
 
-    // // @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard)
     @Get()
     findAll(data){
         return this.usersGrpcService.findAll(data).toPromise();
     }
 
-    // // @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard)
     @Get(':id')
     getById(@Param('id') id: string) {
         let data = { 'id': id };
         return this.usersGrpcService.getById(data).toPromise();
     }
 
-    // @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard)
     @Post()
     create(@Body() data){
         return this.usersGrpcService.create(data).toPromise();
     }
 
-    // // @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard)
     @Put()
     update(@Body() data) {
         return this.usersGrpcService.update(data).toPromise();
     }
 
-    // // @UseGuards(JwtAuthGuard)
+    @UseGuards(JwtAuthGuard)
     @Delete()
     delete(@Body('id') id: string){
         let data = {'id': id};

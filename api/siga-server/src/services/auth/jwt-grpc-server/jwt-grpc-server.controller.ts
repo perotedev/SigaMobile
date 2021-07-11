@@ -7,7 +7,7 @@ export class JwtGrpcServerController {
     constructor(private authService: AuthService){}
 
     @GrpcMethod('AuthService', 'Login')
-    create(data){
+    login(data){
         console.log('gRPC AuthService exec Login()');
         return this.authService.login(data);
     };
