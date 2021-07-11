@@ -15,4 +15,5 @@ message StudantRequest {
 message StudantResponse {
     string status = 1;
     string message = 2;
+    string studantId = 3;
 }

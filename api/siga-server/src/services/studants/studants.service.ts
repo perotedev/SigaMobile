@@ -16,13 +16,13 @@ export class StudantsService {
         } else {
             let people = studant['people'];
             people = people[0].rg;
-            return this.getStatus(people, rg);
+            return this.getStatus(people, rg, studant['_id']);
         }
     }
 
-    getStatus(rg1: string, rg2: string){
+    getStatus(rg1: string, rg2: string, studantId: string){
         if (rg1 == rg2){
-            return { status: 'YES', message: 'GRANTED'};
+            return { status: 'YES', message: 'GRANTED', studantId: studantId};
         } else if (rg1 != rg2){
             return { status: 'NO', message: 'DIVERGENT DATA'};
         }
