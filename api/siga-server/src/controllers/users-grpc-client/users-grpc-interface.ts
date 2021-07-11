@@ -17,10 +17,10 @@ export interface UsersGrpcService {
         _id: string;
         username: string;
         passwordHash: string;
-        studentId: string;
+        studantId: string;
     }): Observable<any>;
 
     delete(data:{
-        _id: string;
+        id: string;
     }): Observable<any>;
 }

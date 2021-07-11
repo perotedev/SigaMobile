@@ -20,7 +20,8 @@ export class UsersGrpcClientController implements OnModuleInit {
     // // @UseGuards(JwtAuthGuard)
     @Get(':id')
     getById(@Param('id') id: string) {
-        return this.usersGrpcService.getById(id).toPromise();
+        let data = { 'id': id };
+        return this.usersGrpcService.getById(data).toPromise();
     }
 
     // @UseGuards(JwtAuthGuard)
@@ -31,13 +32,14 @@ export class UsersGrpcClientController implements OnModuleInit {
 
     // // @UseGuards(JwtAuthGuard)
     @Put()
-    update(@Body('_id') id: string, @Body() data) {
-        return this.usersGrpcService.update(id, data).toPromise();
+    update(@Body() data) {
+        return this.usersGrpcService.update(data).toPromise();
     }
 
     // // @UseGuards(JwtAuthGuard)
     @Delete()
     delete(@Body('id') id: string){
-        this.usersGrpcService.delete(id).toPromise();
+        let data = {'id': id};
+        return this.usersGrpcService.delete(data).toPromise();
     }
 }

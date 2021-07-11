@@ -23,18 +23,18 @@ export class UsersGrpcServerController {
     @GrpcMethod('UsersService', 'GetById')
     getById(data){
         console.log('gRPC UsersService exex GetById()')
-        return this.usersService.getById(data);
+        return this.usersService.getById(data.id);
     };
 
     @GrpcMethod('UsersService', 'Update')
     update(data){
         console.log('gRPC UsersService exex Update()')
-        return this.usersService.update(data._id, data);
+        return this.usersService.update(data);
     };
 
     @GrpcMethod('UsersService', 'Delete')
     delete(data){
         console.log('gRPC UsersService exex Delete()')
-        return this.usersService.delete(data);
+        return this.usersService.delete(data.id);
     };
 }

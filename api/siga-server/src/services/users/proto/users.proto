@@ -20,7 +20,7 @@ message UsersRequest {
 }
 
 message UsersUpdateRequest {
-    string id = 1;
+    string _id = 1;
     string username = 2;
     string passwordHash = 3;
     string studantId = 4;

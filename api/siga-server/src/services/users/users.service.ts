@@ -28,17 +28,17 @@ export class UsersService {
         return await createdUser.save();
     }
 
-    async update(id: string, user: User) {
+    async update(user: User) {
         user.passwordHash = await this.createPasswordHash(user.passwordHash);
-        await this.userModel.updateOne({ _id: id}, user).exec();
-        return this.getById(id);
+        await this.userModel.updateOne({ _id: user._id}, user).exec();
+        return this.getById(user._id);
     }
 
     async delete(id: string) {
         if(await this.userModel.deleteOne({ _id: id}).exec()){
-            return [{ 'status': 'YES', 'message': 'USUÁRIO DELETADO COM SUCESSO!' }]
+            return { status: 'YES', message: 'SUCCESS' };
         } else {
-            return [{ 'status': 'NO', 'message': 'ERRO AO DELETAR USUÁRIO' }]
+            return { status: 'NO', message: 'ERROR' };
         };
     }
 
