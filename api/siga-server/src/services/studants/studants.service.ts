@@ -11,17 +11,20 @@ export class StudantsService {
     // Only to First Access
     async checkStudant(registration: string, rg: string) {
         let studant = await this.studantModel.findOne({ 'registration': registration }).populate(['people']).exec();
-        let people = studant['people'];
-        let check = false;
-
-        if (people.rg == rg){
-            check = true;
-        }
-
-        if (check != false){
-            return { status: 'YES', message: 'GRANTED'};
+        if (studant == null){
+            return { status: 'NO', message: 'INVALID DATA'};
         } else {
-            return { status: 'NO', message: 'DENIED'};
+            let people = studant['people'];
+            people = people[0].rg;
+            return this.getStatus(people, rg);
+        }
+    }
+
+    getStatus(rg1: string, rg2: string){
+        if (rg1 == rg2){
+            return { status: 'YES', message: 'GRANTED'};
+        } else if (rg1 != rg2){
+            return { status: 'NO', message: 'DIVERGENT DATA'};
         }
     }
 }
