@@ -1,17 +1,17 @@
 db.studants.insertMany([
     {
-        _id: ObjectId("60d8ad29967c095068fb5172"),
+        _id: ObjectId("60d8ad29967c085268fb5184"),
         registration: "2019025996",
-        peopleId: ObjectId("60d8ad29967c095068fb5179"),
-        cursoId: ObjectId('60d8ad299p70195068fb2s23'),
+        peopleId: ObjectId("60d8ad29967c085268fb5190"),
+        cursoId: ObjectId('60d8ad29967c085268fb5198'),
         createdAt: ISODate("2021-06-29T00:04:01.665Z"),
         updatedAt: ISODate("2021-06-29T00:04:01.665Z")
     },
     {
-        _id: ObjectId("60d9ad29967c095068f05173"),
+        _id: ObjectId("60d8ad29967c085268fb5185"),
         registration: "2019025096",
-        peopleId: ObjectId("60d8ad29967c095068fb5110"),
-        cursoId: ObjectId('60d8ad299p70195068fb2s24'),
+        peopleId: ObjectId("60d8ad29967c085268fb5191"),
+        cursoId: ObjectId('60d8ad29967c085268fb5199'),
         createdAt: ISODate("2021-06-29T00:04:01.665Z"),
         updatedAt: ISODate("2021-06-29T00:04:01.665Z")
     }

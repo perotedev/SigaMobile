@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package studants;
+
+// Services Declarations
+service StudantsService {
+    rpc CheckStudant(StudantRequest) returns(StudantResponse){}
+}
+
+message StudantRequest {
+    string registration = 1;
+    string rg = 2;
+}
+
+message StudantResponse {
+    string status = 1;
+    string message = 2;
+}

@@ -1,4 +1,4 @@
-import { AuthGrpcClientController } from './../../controllers/jwt-grpc-client/auth-grpc-client.controller';
+import { AuthGrpcClientController } from '../../controllers/auth-grpc-client/auth-grpc-client.controller';
 import { JwtGrpcServerController } from './jwt-grpc-server/jwt-grpc-server.controller';
 import { JwtStrategy } from './jwt/jwt.strategy';
 import { Module } from '@nestjs/common';

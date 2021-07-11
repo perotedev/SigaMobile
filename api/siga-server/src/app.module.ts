@@ -1,3 +1,4 @@
+import { StudantsModule } from './services/studants/studants.module';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
@@ -9,11 +10,14 @@ import { UsersModule } from './services/users/users.module';
   imports: [
     MongooseModule.forRoot('mongodb://root:example@siga-mongo:27017/sigadatabase?authSource=admin'),
     AuthModule,
-    UsersModule
+    UsersModule,
+    StudantsModule
   ],
   controllers: [
     AppController
   ],
-  providers: [AppService],
+  providers: [
+    AppService
+  ]
 })
-export class AppModule {}
+export class AppModule { }

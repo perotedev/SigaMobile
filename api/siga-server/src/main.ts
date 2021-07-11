@@ -27,6 +27,15 @@ async function bootstrap() {
     }
   });
 
+  app.connectMicroservice<MicroserviceOptions>({
+    transport: Transport.GRPC,
+    options: {
+      url: '0.0.0.0:50071',
+      package: 'studants',
+      protoPath: join(__dirname, '/services/studants/proto/studants.proto'),
+    }
+  });
+
   await app.startAllMicroservicesAsync();
 }
 bootstrap();

@@ -25,7 +25,7 @@ export class UsersGrpcClientController implements OnModuleInit {
         return this.usersGrpcService.getById(data).toPromise();
     }
 
-    @UseGuards(JwtAuthGuard)
+    // @UseGuards(JwtAuthGuard)
     @Post()
     create(@Body() data){
         return this.usersGrpcService.create(data).toPromise();
