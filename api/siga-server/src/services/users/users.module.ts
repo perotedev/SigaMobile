@@ -1,7 +1,7 @@
 
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { UserSchema } from './user.schema';
+import { UserSchema } from '../../schemas/user.schema';
 import { UsersService } from './users.service';
 import { UsersGrpcServerController } from './users-grpc-server/users-grpc-server.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';

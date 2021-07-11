@@ -4,26 +4,26 @@ skinparam PackageStyle rect
 
 title SigaMobile Model Classes
 ' em sexo true é masculino e false é feminino
-class Pessoa{
+class People{
     + _id: ObjectID
     + nome: String
     + nascimento: UTCDateTime
     + rg: String
     + cpf: String
     + sexo: Boolean
-    + est_civil: String
+    + estCivil: String
     + naturaliade: String
     + raca: String
-    + fator_rh: String
+    + fatorRh: String
     + email: String
-    + conta_banco_id: ObjectID
-    + endereco_id: ObjectID
-    + telefone_id: ObjectID
+    + contaBancoId: ObjectID
+    + enderecoId: ObjectID
 }
 
 class ContaBanco{
     + _id: ObjectID
-    + num_conta: String
+    + numConta: String
+    + agConta: String
     + operacao: String
     + instituicao: String
 }
@@ -45,16 +45,16 @@ class Telefone{
     + numero: Integer
 }
 
-class Aluno{
+class Studant{
     + _id: ObjectID
-    + matricula: Integer
-    + pessoa_id: ObjectID
-    + curso_id: ObjectID
+    + registration: Integer
+    + peopleId: ObjectID
+    + cursoId: ObjectID
 }
 
 class Professor{
     + _id: ObjectID
-    + pessoa_id: ObejectID
+    + pessoaId: ObejectID
     + coordena: Boolean
 }
 
@@ -63,53 +63,65 @@ class Curso{
     + _id: ObjectID
     + nome: String
     + tipo: String
-    + coordenador_id: ObjectID
+    + coordenadorId: ObjectID
 }
 
 ' aqui Turma é igual a Disciplina
 class Turma{
     + _id: ObjectID
     + nome: String
-    + professor_id: ObjectID
-    + curso_id: ObjectID
+    + professorId: ObjectID
+    + cursoId: ObjectID
 }
 
 ' aqui tipo_nota é AV1, AV2 e PF
 class NotaAluno{
     + _id: ObejectID
-    + aluno_id: ObjectID
-    + turma_id: ObejectID
+    + alunoId: ObjectID
+    + turmaId: ObejectID
     + nota: Float
-    + tipo_nota: String
+    + tipoNota: String
 }
 
 class HorarioTurma{
     + _id: ObejectID
     + turma_id: ObejectID
-    + hora_inicio: String
-    + hora_final: String
+    + horaInicio: String
+    + horaFinal: String
 }
 
 class TarefaTurma{
     + _id: ObjectID
-    + turma_id: ObejectID
+    + turmaId: ObejectID
     + descricao: String
-    + created_at: UTCDataTime
-    + finish_at: UTCDataTime
+    + createdAt: UTCDataTime
+    + updatedAt: UTCDataTime
+    + finishAt: UTCDataTime
 }
 
-Aluno -down-> Pessoa
-Professor -down-> Pessoa
+class StudantTask{
+    + _id: ObjectID
+    + descricao: String
+    + completed: Boolean
+    + fileUri: String
+    + studantId: ObejectID
+    + createdAt: UTCDataTime
+    + updatedAt: UTCDataTime
+}
 
-Pessoa "1" *-right- "1" ContaBanco: contains
-Pessoa "1" *-left- "1" Endereco: contains
-Pessoa "1" *-down- "many" Telefone: contains
+Studant -down-> People
+Professor -down-> People
+
+People "1" *-right- "1" ContaBanco: contains
+People "1" *-left- "1" Endereco: contains
+People "1" *-down- "many" Telefone: contains
 Professor "1" *-right- "many" Turma: contains
-Aluno "many" *-left- "many" Turma: contains
-Aluno "1" *-up- "many" NotaAluno: contains
-Turma "1" *-up- "many" HorarioTurma: contains
+Studant "many" *-left- "many" Turma: contains
+Studant "1" *-up- "many" NotaAluno: contains
+Studant "1" *-up- "many" StudantTask: contains
+Studant "1" *-up- "many" HorarioTurma: contains
 Turma "1" *-up- "many" TarefaTurma: contains
-Curso "many" *-left- "many" Aluno: contains
+Curso "many" *-left- "many" Studant: contains
 
 newpage
 title SigaMobile Controllers
