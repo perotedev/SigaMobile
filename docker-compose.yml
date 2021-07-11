@@ -2,7 +2,7 @@
 version: '3.1'
 
 services:
-  mongo:
+  siga-mongo:
     container_name: siga-database
     image: mongo
     restart: always
@@ -15,33 +15,19 @@ services:
     volumes:
       - "./database-scripts:/database-scripts"
 
-  app-siga:
+  siga-server:
     build:
       context: ./api/siga-server
       dockerfile: Dockerfile
     container_name: siga-server
     entrypoint: ./.docker/entrypoint.sh
     ports:
-      - "3000:3000"
+      - "4040:4040"
     volumes:
       - ./api/siga-server:/home/node/app
     tty: true
     depends_on:
-      - mongo
-
-  client-siga:
-    build:
-      context: ./api/siga-client
-      dockerfile: Dockerfile
-    container_name: siga-client
-    entrypoint: ./.docker/entrypoint.sh
-    ports:
-      - "4000:4000"
-    volumes:
-      - ./api/siga-client:/home/node/app
-    tty: true
-    depends_on:
-      - mongo
+      - siga-mongo
 
   grpc-test:
     container_name: siga-grpcox

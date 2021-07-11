@@ -7,14 +7,14 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors();
 
-  await app.listen(3000);
+  await app.listen(4040);
 
   app.connectMicroservice<MicroserviceOptions>({
     transport: Transport.GRPC,
     options: {
       url: '0.0.0.0:50051',
       package: 'users',
-      protoPath: join(__dirname, '/users/proto/users.proto'),
+      protoPath: join(__dirname, '/services/users/proto/users.proto'),
     }
   });
 
@@ -23,7 +23,7 @@ async function bootstrap() {
     options: {
       url: '0.0.0.0:50061',
       package: 'auth',
-      protoPath: join(__dirname, '/auth/proto/auth.proto'),
+      protoPath: join(__dirname, '/services/auth/proto/auth.proto'),
     }
   });
 
