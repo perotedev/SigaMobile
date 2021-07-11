@@ -34,6 +34,8 @@ message UsersResponse {
     string _id = 1;
     string username = 2;
     string studantId = 3;
+    string status = 4;
+    string message = 5;
 }
 
 message UsersResponseAll {

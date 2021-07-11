@@ -23,8 +23,14 @@ export class UsersService {
 
     async create(user: User) {
         const createdUser = new this.userModel(user);
-        createdUser.passwordHash = await this.createPasswordHash(createdUser.passwordHash);
-        return await createdUser.save();
+        let check = await this.findUser(createdUser.username);
+        if (check == null){
+            createdUser.passwordHash = await this.createPasswordHash(createdUser.passwordHash);
+            return await createdUser.save();
+        }
+        else {
+            return { status: 'NO', message: 'INDISPONIBLE USERNAME'};
+        }
     }
 
     async update(user: User) {

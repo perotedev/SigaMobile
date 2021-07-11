@@ -8,7 +8,6 @@ export class JwtGrpcServerController {
 
     @GrpcMethod('AuthService', 'Login')
     login(data){
-        console.log('gRPC AuthService exec Login()');
         return this.authService.login(data);
     };
 }
