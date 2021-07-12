@@ -22,7 +22,7 @@ export class StudantsService {
 
     getStatus(rg1: string, rg2: string, studantId: string){
         if (rg1 == rg2){
-            return { status: 'YES', message: 'GRANTED', studantId: studantId};
+            return { status: 'YES', studantId: studantId};
         } else if (rg1 != rg2){
             return { status: 'NO', message: 'DIVERGENT DATA'};
         }
