@@ -1,13 +1,11 @@
 import { join } from 'path';
 import { NestFactory } from '@nestjs/core';
-import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 import { AppModule } from './app.module';
+import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors();
-
-  await app.listen(4040);
 
   app.connectMicroservice<MicroserviceOptions>({
     transport: Transport.GRPC,
@@ -35,7 +33,8 @@ async function bootstrap() {
       protoPath: join(__dirname, '/services/studants/proto/studants.proto'),
     }
   });
-
-  await app.startAllMicroservicesAsync();
+  
+  await app.listen(4040);
+  await app.startAllMicroservices();
 }
 bootstrap();

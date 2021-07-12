@@ -7,7 +7,6 @@ npm install
 
 # instala o mogoose
 npm install --save @nestjs/mongoose mongoose --force
-npm install --save-dev @types/mongoose --force
 
 # instala dependência para o JWT
 npm install --save @nestjs/passport passport passport-local
@@ -20,7 +19,7 @@ npm i bcrypt
 npm i -D @types/bcrypt
 
 # instala dependências para o gRPC
-npm i --save @nestjs/microservices --legacy-peer-deps
+npm i --save @nestjs/microservices --force
 npm i --save @grpc/grpc-js @grpc/proto-loader
 
 npm run start:dev
