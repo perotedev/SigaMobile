@@ -23,6 +23,11 @@ export class UsersService {
 
     async create(user: User) {
         const createdUser = new this.userModel(user);
+        const especials = "!@#$%*()+'\"";
+        let isnum = /^\d+$/.test(createdUser.username);
+        if (isnum){
+            return { status: 'NO', message: 'ONLY NUMBERS'};
+        }
         let check = await this.findUser(createdUser.username);
         if (check == null){
             createdUser.passwordHash = await this.createPasswordHash(createdUser.passwordHash);
