@@ -38,7 +38,7 @@ export class UsersService {
             else {
                 return { status: 'NO', message: 'INDISPONIBLE USERNAME'};
             }
-        } 
+        }
     }
 
     async update(user: User) {

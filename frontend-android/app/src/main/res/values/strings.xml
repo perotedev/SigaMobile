@@ -41,5 +41,9 @@
     <string name="create_user_fail">Nome de usuário já existe, tente novamente!</string>
     <string name="create_user_success">Usuário criado com sucesso!</string>
     <string name="login_error">Erro ao fazer login!</string>
+    <string name="especial_characters">ESPECIAL CHARACTERS</string>
+    <string name="alert_especials">Usuário não pode conter caracteres especiais!</string>
+    <string name="only_numbers">ONLY NUMBERS</string>
+    <string name="alert_numbers">Usuário não pode conter apenas números!</string>
 
 </resources>

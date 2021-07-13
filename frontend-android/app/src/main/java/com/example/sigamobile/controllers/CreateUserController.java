@@ -35,6 +35,18 @@ public class CreateUserController {
                         username.getText().toString(),
                         password.getText().toString()
                     );
+                } else if(jsonObject.get("message") != null && jsonObject.get("message").getAsString().equals(context.getString(R.string.especial_characters))){
+                    Toast.makeText(
+                            context,
+                            context.getString(R.string.alert_especials),
+                            Toast.LENGTH_SHORT
+                    ).show();
+                } else if(jsonObject.get("message") != null && jsonObject.get("message").getAsString().equals(context.getString(R.string.only_numbers))){
+                    Toast.makeText(
+                            context,
+                            context.getString(R.string.alert_numbers),
+                            Toast.LENGTH_SHORT
+                    ).show();
                 } else {
                     Toast.makeText(
                             context,
