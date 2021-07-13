@@ -17,7 +17,7 @@ public class SplashView extends AppCompatActivity {
             public void run() {
                 try {
                     int delay = 0;
-                    while (delay < 1500) {
+                    while (delay < 1000) {
                         sleep(150);
                         delay = delay + 100;
                     }

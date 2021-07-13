@@ -3,6 +3,8 @@
     <string name="app_name">SigaMobile</string>
     <string name="toolbar_title">My View</string>
     <string name="studant_name_test">Aluno Aleatório</string>
+    <string name="btn_continue">Continuar</string>
+    <string name="new_user_title">Cadastro</string>
 
     <!--  LOGIN VIEW  -->
     <string name="title_login_view">Login</string>
@@ -11,9 +13,31 @@
     <string name="password_label">Senha</string>
     <string name="password_hint">digite sua senha</string>
     <string name="password_forget">Esqueci a senha</string>
-    <string name="first_access">Primeiro acesso</string>
+    <string name="first_access">Cadastre-se aqui</string>
     <string name="btn_login">Entrar</string>
-    <string name="login_fail">Usuário ou senha errado!</string>
+    <string name="login_fail">Usuário ou senha incorretos!</string>
+    <string name="input_empty">Preencha usuário e senha!</string>
+    <string name="no_internet">Verifique sua conexão à internet!</string>
 
+    <!--  CHECK_REGISTRATION VIEW  -->
+    <string name="check_registration_title">Digite as informações a seguir:</string>
+    <string name="registration_label">Matrícula</string>
+    <string name="registration_hint">Digite sua matrícula</string>
+    <string name="rg_label">RG</string>
+    <string name="rg_hint">Digite seu RG</string>
+    <string name="input_check_registration_empty">Preencha matrícula e RG!</string>
+    <string name="check_registration_fail">Dados não conferem, tente novamente!</string>
+
+    <!--  CREATE USER VIEW  -->
+    <string name="title_create_user">Crie seu login:</string>
+    <string name="new_username_title">Usuário</string>
+    <string name="new_username_hint">Digite o usuário que deseja</string>
+    <string name="new_password_label">Senha</string>
+    <string name="new_password_hint">Digite a senha que deseja</string>
+    <string name="btn_create_user">Cadastrar</string>
+    <string name="input_create_user_empty">Preencha usuário e senha!</string>
+    <string name="create_user_fail">Nome de usuário já existe, tente novamente!</string>
+    <string name="create_user_success">Usuário criado com sucesso!</string>
+    <string name="login_error">Erro ao fazer login!</string>
 
 </resources>

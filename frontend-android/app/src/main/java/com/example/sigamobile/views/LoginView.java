@@ -21,5 +21,6 @@ public class LoginView extends AppCompatActivity {
                 findViewById(R.id.edit_text_user),
                 findViewById(R.id.edit_text_password)
         );
+        controller.firstAccess(findViewById(R.id.firt_access));
     }
 }

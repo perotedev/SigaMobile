@@ -8,8 +8,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.sigamobile.R;
+import com.example.sigamobile.views.CheckRegistrationView;
 import com.example.sigamobile.views.MainMenu;
 import com.example.sigamobile.websercives.HttpRequests;
 import com.google.gson.JsonObject;
@@ -28,36 +28,56 @@ public class LoginViewController {
 
     public void login(Button button, EditText user, EditText password){
         FutureCallback loginCallbback = (e, result) -> {
-            JsonObject jsonObject = (JsonObject) result;
-
-            if (jsonObject.get("token").getAsString().equals("") || jsonObject.isJsonNull()){
+            try {
+                JsonObject jsonObject = (JsonObject) result;
+                if (jsonObject.get("accessToken") != null) {
+                    Intent intent = new Intent(context, MainMenu.class);
+                    intent.putExtra("accessToken", jsonObject.get("accessToken").getAsString());
+                    context.startActivity(intent);
+//                    ((Activity)context).finish();
+                } else {
+                    Toast.makeText(
+                            context,
+                            context.getString(R.string.login_fail),
+                            Toast.LENGTH_SHORT
+                    ).show();
+                }
+            } catch (Exception exception){
                 Toast.makeText(
                         context,
-                        context.getString(R.string.login_fail),
-                        Toast.LENGTH_SHORT)
-                        .show();
-            } else {
-                Intent intent = new Intent(context, MainMenu.class);
-                intent.putExtra("token", jsonObject.get("token").toString());
-                context.startActivity(intent);
-                ((Activity)context).finish();
+                        context.getString(R.string.no_internet),
+                        Toast.LENGTH_SHORT
+                ).show();
             }
         };
 
-        button.setOnClickListener(v -> HttpRequests.apiSigaLogin(
-                context,
-                loginCallbback,
-                user.getText().toString(),
-                password.getText().toString()
-        ));
+        button.setOnClickListener(v -> {
+            if (user.getText().toString().equals("") || password.getText().toString().equals("")){
+                Toast.makeText(
+                        context,
+                        context.getString(R.string.input_empty),
+                        Toast.LENGTH_SHORT)
+                        .show();
+            } else {
+                HttpRequests.apiSigaLogin(
+                        context,
+                        loginCallbback,
+                        user.getText().toString(),
+                        password.getText().toString()
+                );
+            }
+        });
     }
 
     public void firstAccess(TextView textView){
-
+        textView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, CheckRegistrationView.class);
+            context.startActivity(intent);
+        });
     }
 
     public void passwordForget(TextView textView){
-
+        textView.setOnClickListener(v -> Toast.makeText(context, "FALTA IMPLEMENTAR", Toast.LENGTH_SHORT).show());
     }
 
     public void setTitleView(TextView titleView){

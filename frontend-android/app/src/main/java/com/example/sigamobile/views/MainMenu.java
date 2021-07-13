@@ -12,7 +12,7 @@ public class MainMenu extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_view);
+        setContentView(R.layout.activity_main_menu);
         
     }
 }

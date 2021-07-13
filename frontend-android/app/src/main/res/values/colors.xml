@@ -12,4 +12,5 @@
     <color name="back_text_edit">#C7D9DA</color>
     <color name="default_text">#4A4A4A</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="btn_inactive">#9F9D9D</color>
 </resources>

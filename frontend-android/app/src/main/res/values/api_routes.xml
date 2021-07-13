@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--  BASE URL  -->
-    <string name="base_url">http://localhost:3000</string>
+    <string name="base_url">http://192.168.1.106:4040</string>
 
     <!--  API ROUTES  -->
     <string name="api_login_route">/siga-login</string>
+    <string name="api_users_route">/users</string>
+    <string name="api_check_registration">/check-registration</string>
 </resources>
