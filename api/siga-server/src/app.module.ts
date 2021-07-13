@@ -1,3 +1,4 @@
+import { DocumentsModule } from './services/documents/documents.module';
 import { StudantsModule } from './services/studants/studants.module';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -11,6 +12,7 @@ import { UsersModule } from './services/users/users.module';
     MongooseModule.forRoot('mongodb://root:example@siga-mongo:27017/sigadatabase?authSource=admin'),
     AuthModule,
     UsersModule,
+    DocumentsModule,
     StudantsModule
   ],
   controllers: [
