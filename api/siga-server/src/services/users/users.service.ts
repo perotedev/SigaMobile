@@ -23,19 +23,22 @@ export class UsersService {
 
     async create(user: User) {
         const createdUser = new this.userModel(user);
-        const especials = "!@#$%*()+'\"";
+        let isspecials = /[ `!@#$%^´&*()+\=\[\]{};':"\\|,<>\/?~]/.test(createdUser.username);
         let isnum = /^\d+$/.test(createdUser.username);
         if (isnum){
             return { status: 'NO', message: 'ONLY NUMBERS'};
-        }
-        let check = await this.findUser(createdUser.username);
-        if (check == null){
-            createdUser.passwordHash = await this.createPasswordHash(createdUser.passwordHash);
-            return await createdUser.save();
-        }
-        else {
-            return { status: 'NO', message: 'INDISPONIBLE USERNAME'};
-        }
+        } else if(isspecials){
+            return { status: 'NO', message: 'ESPECIAL CHARACTERS'};
+        } else {
+            let check = await this.findUser(createdUser.username);
+            if (check == null){
+                createdUser.passwordHash = await this.createPasswordHash(createdUser.passwordHash);
+                return await createdUser.save();
+            }
+            else {
+                return { status: 'NO', message: 'INDISPONIBLE USERNAME'};
+            }
+        } 
     }
 
     async update(user: User) {
