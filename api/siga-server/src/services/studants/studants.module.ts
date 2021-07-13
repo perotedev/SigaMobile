@@ -1,3 +1,4 @@
+import { UserSchema } from './../../schemas/user.schema';
 import { PeopleSchema } from './../../schemas/people.schema';
 import { StudantsService } from './studants.service';
 import { StudantsGrpcClientController } from './../../controllers/studants-grpc-client/studants-grpc-client.controller';
@@ -12,7 +13,9 @@ import { join } from 'path';
     imports: [
         MongooseModule.forFeature([
             { name: 'Studant', schema: StudantSchema},
-            { name: 'People', schema: PeopleSchema}]
+            { name: 'People', schema: PeopleSchema},
+            { name: 'User', schema: UserSchema}
+        ]
         ),
         ClientsModule.register([{
             name: 'STUDANTS_PACKAGE',
