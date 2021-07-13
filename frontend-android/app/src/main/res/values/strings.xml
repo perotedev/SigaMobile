@@ -27,6 +27,8 @@
     <string name="rg_hint">Digite seu RG</string>
     <string name="input_check_registration_empty">Preencha matrícula e RG!</string>
     <string name="check_registration_fail">Dados não conferem, tente novamente!</string>
+    <string name="already_registered_received">STUDANT ALREADY REGISTERED</string>
+    <string name="already_registered_show">Estudante já está cadastrado no sistema!</string>
 
     <!--  CREATE USER VIEW  -->
     <string name="title_create_user">Crie seu login:</string>

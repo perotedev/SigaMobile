@@ -30,6 +30,12 @@ public class CheckRegistrationController {
                     intent.putExtra("studantId", jsonObject.get("studantId").getAsString());
                     context.startActivity(intent);
                     ((Activity)context).finish();
+                } else if (jsonObject.get("message").getAsString().equals(context.getString(R.string.already_registered_received))){
+                    Toast.makeText(
+                            context,
+                            context.getString(R.string.already_registered_show),
+                            Toast.LENGTH_SHORT
+                    ).show();
                 } else {
                     Toast.makeText(
                             context,
