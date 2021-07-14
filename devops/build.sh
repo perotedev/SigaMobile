@@ -1,8 +1,7 @@
 #!/bin/bash
 INIT="\e[01;33mIniciando Containers\e[00m 🔖\n"
-START="\e[01;33mInciando aplicação\e[00m 💡"
-APP_PORT="\e[01;33m http://localhost:4040\e[00m 😎"
-FINISH="\e[01;36mAplicação inicializada com sucesso em\e[00m"
+START="\e[01;33mInciando aplicação em\e[00m"
+APP_PORT="\e[01;36m http://localhost:4040\e[00m 💡"
 
 # Inicializa os containers
 echo -e "\n$INIT"
@@ -19,7 +18,6 @@ done
 ./devops/seed-fake-database.sh
 
 # Inicia a aplicação
-echo -e "\n$START"
-docker-compose exec -T siga-server /bin/bash -c \ "cd /home/node/app/.docker && ./entrypoint.sh"
-
-echo -e "\n$FINISH $APP_PORT"
+echo -e "\n$START $APP_PORT"
+sleep 2
+docker-compose exec -T siga-server /bin/bash -c "cd /home/node/app/.docker && ./entrypoint.sh"
