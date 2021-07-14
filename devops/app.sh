@@ -10,18 +10,26 @@ COMMAND_START="\e[01;36mstart\e[00m"
 COMMAND_STOP="\e[01;36mstop\e[00m"
 ERROR="Comando $COMMAND não é válido, tente novamente ❌"
 HELP_COMMANDS="Comandos válidos: $COMMAND_START e $COMMAND_STOP ✅"
+STATUS=$(curl -s http://localhost:4040)
+ALREADY_START="\e[01;33mA aplicação já está em execução\e[00m 🤨"
+
 
 if [ $1 == "start" ]
 then
-    # Inicializa os containers
-    echo -e "\n$INIT"
-    docker-compose start
+    if [ "$STATUS" == "This server is running in port 4040" ]
+    then
+        echo -e "\n$ALREADY_START\n"
+    else
+        # Inicializa os containers
+        echo -e "\n$INIT"
+        docker-compose start
 
-    # Inicia a aplicação
-    echo -e "\n$START"
-    docker-compose exec -T siga-server /bin/bash -c \ "cd /home/node/app && npm run start:dev"
+        # Inicia a aplicação
+        echo -e "\n$START"
+        docker-compose exec -T siga-server /bin/bash -c \ "cd /home/node/app && npm run start:dev"
 
-    echo -e "\n$FINISH $APP_PORT\n"
+        echo -e "\n$FINISH $APP_PORT\n"
+    fi
 else
     if [ $1 == "stop" ]
     then
@@ -33,3 +41,5 @@ else
         echo -e "\n$ERROR\n$HELP_COMMANDS"
     fi
 fi
+
+
