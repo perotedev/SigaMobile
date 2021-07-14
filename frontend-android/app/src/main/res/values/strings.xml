@@ -46,4 +46,25 @@
     <string name="only_numbers">ONLY NUMBERS</string>
     <string name="alert_numbers">Usuário não pode conter apenas números!</string>
 
+    <!--  MAIN MENU VIEW  -->
+    <string name="newsletter_title">Últimas Atualizações</string>
+    <string name="btn_hours">Quadro de Horários</string>
+    <string name="btn_identity">Identidade Estudantil</string>
+    <string name="btn_scores">Minhas Notas</string>
+    <string name="btn_classes">Turmas do Semestre</string>
+
+    <!--  NEWSLETTER CARD  -->
+    <string name="title_newsletter_card">18/05/2021 - ZL - REDES DE COMPUTADORES</string>
+    <string name="notice_content_card">Novo Tópico de Aula: Protocolo de Internet - IP</string>
+
+
+    <!--  IMAGES DESCRIPTIONS  -->
+    <string name="go_to_my_hours">Ver meus horários</string>
+    <string name="go_to_my_identity">Ver minha identidade estudantil</string>
+    <string name="go_to_my_scores">Ver minhas notas</string>
+    <string name="go_to_my_classes">Ver minhas turmas</string>
+    <string name="btn_menu_bar">Menu lateral</string>
+    <string name="newsletter_back">Ver notícia anterior</string>
+    <string name="newsletter_forward">Ver próxima notícia</string>
+
 </resources>

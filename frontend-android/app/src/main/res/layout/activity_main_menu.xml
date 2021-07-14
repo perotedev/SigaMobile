@@ -1,19 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/white">
 
-    <TextView
+    <include
+        android:id="@+id/main_menu_toolbar"
+        layout="@layout/default_toolbar"
+
+    />
+
+    <ImageView
+        android:id="@+id/btn_menu_toolbar"
+        android:layout_width="35dp"
+        android:layout_height="32dp"
+        android:src="@mipmap/outline_menu_white_icon"
+        android:background="@color/transparent"
+        app:layout_constraintTop_toTopOf="@id/main_menu_toolbar"
+        app:layout_constraintStart_toStartOf="@id/main_menu_toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/main_menu_toolbar"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/btn_menu_bar"
+    />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_menu_toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="MENU"
-        android:textSize="40sp"
-        android:gravity="center"
-    />
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/newsletter_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/newsletter_title"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:textSize="24sp"
+                />
+
+            <ImageView
+                android:id="@+id/btn_back_newsletter_main_menu"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/arrow_back_black_icon"
+                android:background="@color/transparent"
+                app:layout_constraintTop_toTopOf="@id/newsletter_title"
+                app:layout_constraintStart_toStartOf="@id/newsletter_title"
+                app:layout_constraintBottom_toBottomOf="@id/newsletter_title"
+                android:layout_marginStart="32dp"
+                android:contentDescription="@string/newsletter_back"
+                />
+
+            <ImageView
+                android:id="@+id/btn_forward_newsletter_main_menu"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@mipmap/arrow_forward_black_icon"
+                android:background="@color/transparent"
+                app:layout_constraintTop_toTopOf="@id/newsletter_title"
+                app:layout_constraintEnd_toEndOf="@id/newsletter_title"
+                app:layout_constraintBottom_toBottomOf="@id/newsletter_title"
+                android:layout_marginEnd="32dp"
+                android:contentDescription="@string/newsletter_forward"
+                />
+
+            <include
+                android:id="@+id/newsletter_card_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/newsletter_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="10dp"
+                layout="@layout/newsletter_card"
+                />
+
+            <GridLayout
+                android:id="@+id/gridViewDemo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginTop="25dp"
+                android:columnCount="2"
+                app:layout_constraintTop_toBottomOf="@+id/newsletter_card_recyclerview"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!--Card1: 1column/row1-->
+                <RelativeLayout
+                    android:id="@+id/ger_sol"
+                    android:layout_width="162dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/btn_default_background"
+                    android:layout_column="0"
+                    android:layout_row="0"
+                    android:gravity="center">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/img_pencil"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:src="@mipmap/calendar_icon"
+                            android:background="@color/transparent"
+                            android:contentDescription="@string/go_to_my_hours"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/text_pencil"
+                        />
+
+                        <TextView
+                            android:id="@+id/text_pencil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn_hours"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:layout_marginTop="5dp"
+                            android:paddingHorizontal="5dp"
+                            app:layout_constraintTop_toBottomOf="@+id/img_pencil"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </RelativeLayout>
+
+                <!--Card2: column2/row1-->
+                <RelativeLayout
+                    android:id="@+id/my_sol"
+                    android:layout_width="162dp"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:layout_gravity="end"
+                    android:background="@drawable/btn_default_background"
+                    android:layout_column="1"
+                    android:layout_row="0">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/img_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@mipmap/identity_icon"
+                            android:background="@color/transparent"
+                            android:contentDescription="@string/go_to_my_identity"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/text_search"
+                        />
+
+                        <TextView
+                            android:id="@+id/text_search"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/btn_identity"
+                            android:gravity="center"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:layout_marginTop="5dp"
+                            android:paddingHorizontal="5dp"
+                            app:layout_constraintTop_toBottomOf="@+id/img_search"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </RelativeLayout>
+
+                <!--Card3: row2/column1-->
+                <RelativeLayout
+                    android:id="@+id/sol_ccraf"
+                    android:layout_width="162dp"
+                    android:layout_height="160dp"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_default_background"
+                    android:layout_column="0"
+                    android:layout_row="1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/img_document"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:src="@mipmap/bars_icon"
+                            android:background="@color/transparent"
+                            android:contentDescription="@string/go_to_my_scores"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/text_document"
+                        />
+
+                        <TextView
+                            android:id="@+id/text_document"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/btn_scores"
+                            android:textColor="@color/white"
+                            android:layout_marginTop="5dp"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:paddingHorizontal="10dp"
+                            app:layout_constraintTop_toBottomOf="@+id/img_document"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </RelativeLayout>
+
+                <!--Card4: row2/column2-->
+                <RelativeLayout
+                    android:id="@+id/prem_pecuni"
+                    android:layout_width="162dp"
+                    android:layout_height="160dp"
+                    android:gravity="center"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/btn_default_background"
+                    android:layout_column="1"
+                    android:layout_row="1">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/img_premiation"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:src="@mipmap/hdd_icon"
+                            android:background="@color/transparent"
+                            android:contentDescription="@string/go_to_my_classes"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toTopOf="@+id/text_premiation"
+                        />
+
+                        <TextView
+                            android:id="@+id/text_premiation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/btn_classes"
+                            android:textColor="@color/white"
+                            android:textStyle="bold"
+                            android:layout_marginTop="5dp"
+                            android:textSize="20sp"
+                            android:paddingHorizontal="5dp"
+                            app:layout_constraintTop_toBottomOf="@+id/img_premiation"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                        />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </RelativeLayout>
+
+            </GridLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

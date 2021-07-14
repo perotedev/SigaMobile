@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:id="@+id/newsletter_card">
+
+    <RelativeLayout
+        android:id="@+id/card_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/top_card_background">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title_newsletter_card"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_top"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/bottom_card_background">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/white_default_background">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                android:text="@string/notice_content_card"
+                android:textColor="@color/default_text"
+                android:textSize="18sp"
+            />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
