@@ -20,7 +20,7 @@ services:
       context: ./api/siga-server
       dockerfile: Dockerfile
     container_name: siga-server
-    entrypoint: ./.docker/entrypoint.sh
+    # entrypoint: ./.docker/entrypoint.sh
     ports:
       - "4040:4040"
     volumes:
