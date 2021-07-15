@@ -93,14 +93,14 @@ Após isso localize o arquivo `api_routes.xml`, localizado no seguinte diretóri
 <div id="fake_users"></div>
 
 ## 🧑 Logins para teste<br>
-Para utilizar a aplicação você pode utilizar os dados abaixo:<br>
+Para utilizar a aplicação você pode usar os dados abaixo:<br><br>
 -> Usuário já cadastrado no sistema:<br>
 --| **usuário:** `joaomelo`<br>
 --| **senha:** `password`<br>
 --| **matrícula:** `2019025996`<br>
 --| **rg:** `358867`
 
--> Usuário a ser cadastrado:<br>
+-> Usuário a ser cadastrado (primeiro acesso):<br>
 --| **matrícula:** `2019025096`<br>
 --| **rg:** `448868`
 
