@@ -6,7 +6,7 @@
 <a href="#backend_exex">---| 4.1 - Backend NestJS</a><br>
 <a href="#frontend_exex">---| 4.2 - Frontend Android</a><br>
 <a href="#fake_users">---| 4.3 - Logins de Teste</a><br>
-**<a href="#documentation">5 - Documentação da aplicação</a>**<br><br>
+**<a href="#documentation">5 - Documentação da aplicação</a>**<br>
 
 <div id="#abstract"></div>
 
@@ -108,4 +108,4 @@ Após isso localize o arquivo `api_routes.xml`, localizado no seguinte diretóri
 
 # Documentação do projeto
 Para vizualizar a documentação contendo o protótipo, requisitos funcionais, histórias de usuário e testes de usabilidade acesse o link abaixo: <br>
-**<a href="https://www.notion.so/SigaMobile-274cdacfb6c640928a7c7a4a3738395e">Clique aqui para ver a documentação da aplicação</a>**
+**<a href="https://www.notion.so/SigaMobile-274cdacfb6c640928a7c7a4a3738395e" target="_blank">Clique aqui para ver a documentação da aplicação</a>**
