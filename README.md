@@ -1,5 +1,5 @@
-# Índice
-**<a href="#abstract">1 - Apresentação do projeto</a><br>**
+# Índice <br>
+**<a href="#abstract">1 - O que é o SigaMobile?</a><br>**
 **<a href="#tech_utilities">2 - Tecnologias utilizadas</a><br>**
 **<a href="#requireds">3 - Requisitos para excutar a aplicação</a><br>**
 **<a href="#app_exex">4 - Executando a aplicação</a><br>**
@@ -7,6 +7,7 @@
 <a href="#frontend_exex">---| 4.2 - Frontend Android</a><br>
 <a href="#fake_users">---| 4.3 - Logins de Teste</a><br>
 **<a href="#documentation">5 - Documentação da aplicação</a>**<br>
+**<a href="#team">6 - Authors</a>**<br>
 
 <div id="#abstract"></div>
 
@@ -35,8 +36,8 @@ A proposta é desenvolver um frontend mobile (Android) e o backend na arquitetur
 # Requisitos para rodar aplicação:
 ✴️ Docker e docker-compose<br>
 ✴️ Sistema operacional Linux (Ubuntu/Debian)<br>
-✴️ Android Studio com Android 10 (API 29) e versão 3.2 ou superior do Gradle<br>
-✴️ O computador que irá executar a aplicação deve estar na mesma rede (Wifi ou USB thering) que o celular que irá usar o aplicativo<br>
+✴️ Android Studio com Android 10 (API 29) e versão 4.1.1 ou superior do Gradle<br>
+✴️ O computador que irá executar a aplicação deve estar na mesma rede (Wifi ou USB tethering) que o celular que irá usar o aplicativo<br>
 ✴️ Acesso a internet<br>
 
 <div id="app_exex"></div><br>
@@ -57,13 +58,13 @@ Entre na pasta raiz do repositório **"SigaMobile"** e execute o comando:
 # para executar pela primeira vez
 ./devops/build.sh
 ```
-<p>Aguarde até o terminal mostre as mensagens abaixo: </p> 
+<p>Aguarde até que o terminal mostre as mensagens abaixo: </p> 
 
 ```bash
-[Nest] 160   - 07/14/2021, 11:14:02 PM   [NestApplication] Nest application successfully started +8ms
-[Nest] 160   - 07/14/2021, 11:14:02 PM   [NestMicroservice] Nest microservice successfully started +15ms
-[Nest] 160   - 07/14/2021, 11:14:02 PM   [NestMicroservice] Nest microservice successfully started +3ms
-[Nest] 160   - 07/14/2021, 11:14:02 PM   [NestMicroservice] Nest microservice successfully started +3ms
+[NestApplication] Nest application successfully started +8ms
+[NestMicroservice] Nest microservice successfully started +15ms
+[NestMicroservice] Nest microservice successfully started +3ms
+[NestMicroservice] Nest microservice successfully started +3ms
 ```
 
 Após isso o backend da aplicação estará sendo executando. Caso queira continuar utilizando o mesmo terminal será necessário executar o seguinte comando: `ctrl+c`.
@@ -91,7 +92,8 @@ Após isso localize o arquivo `api_routes.xml`, localizado no seguinte diretóri
 
 <div id="fake_users"></div>
 
-## 🧑 Logins para teste
+## 🧑 Logins para teste<br>
+Para utilizar a aplicação você pode utilizar os dados abaixo:<br>
 -> Usuário já cadastrado no sistema:<br>
 --| **usuário:** `joaomelo`<br>
 --| **senha:** `password`<br>
@@ -108,4 +110,12 @@ Após isso localize o arquivo `api_routes.xml`, localizado no seguinte diretóri
 
 # Documentação do projeto
 Para vizualizar a documentação contendo o protótipo, requisitos funcionais, histórias de usuário e testes de usabilidade acesse o link abaixo: <br>
-[Clique aqui para ver a documentação da aplicação](https://www.notion.so/SigaMobile-274cdacfb6c640928a7c7a4a3738395e)
+[Clique aqui para ver a documentação da aplicação](https://www.notion.so/SigaMobile-274cdacfb6c640928a7c7a4a3738395e) <br>
+
+<div id="team"></div>
+
+# Authors <br>
+[Rodrigo Perote](https://github.com/rpm-95) - MIRCROSERVICES | Login, Authorization e criar novo usuário (primeiro acesso) <br>
+[Thalles Kaik](https://github.com/thallesk17) - MIRCROSERVICE | Emitir atestado de Matrícula <br>
+[Bernardo Amazonas](https://github.com/badc-2000) - MIRCROSERVICE | Visualizar notas e horários de aula <br>
+[Gabriel Costa](https://github.com/GabrielCostaSilvaa) - MIRCROSERVICE | Atualização de dados pessoais <br>
