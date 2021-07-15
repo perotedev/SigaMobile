@@ -1,3 +1,14 @@
+<p align="center">
+  <img src="https://img.shields.io/badge/npm-7.18.1-red"> <img src="https://img.shields.io/badge/node-v16.4.2-green">
+  <img src="https://img.shields.io/badge/nestjs-v7.6.0-green"> <img src="https://img.shields.io/badge/android-API%2029-green">
+  <img src="https://img.shields.io/badge/mongoose-7.2.4-yellowgreen"> <img src="https://img.shields.io/badge/jwt-7.2.0-red">
+  <img src="https://img.shields.io/badge/microsservices-8.0.1-blue"> <img src="https://img.shields.io/badge/MongoDB-latest-green">
+  <img src="https://img.shields.io/badge/docker--compose-3.1-blue"> <img src="https://img.shields.io/badge/docker-20.10.2-blue">
+  <img src="https://img.shields.io/badge/bash-5.0.17-red"> <img src="https://img.shields.io/badge/grpcox-latest-yellow">
+  <img src="https://img.shields.io/badge/proto-3-orange"> <img src="https://img.shields.io/badge/gRPC-1.3.5-blue">
+  <img src="https://img.shields.io/badge/typescript-4.3-blue"> <img src="https://img.shields.io/badge/Linux-5.4-yellow">
+</p>
+
 # Índice <br>
 **<a href="#abstract">1 - O que é o SigaMobile?</a><br>**
 **<a href="#tech_utilities">2 - Tecnologias utilizadas</a><br>**
