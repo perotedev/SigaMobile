@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/ip_exit"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@mipmap/exit_icon"
+    />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/ip_tiitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="32dp"
+            android:text="DIGITE O IP DO SEU COMPUTADOR NA REDE LOCAL"
+            android:gravity="center"
+        />
+
+        <EditText
+            android:id="@+id/edit_ip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ip_tiitle"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="32dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:maxLines="1"
+            android:gravity="center"
+            android:inputType="number|text"
+        />
+
+        <TextView
+            android:id="@+id/text_explain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_ip"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="32dp"
+            android:text="Tenha certeza que o seu celular esteja na mesma rede do comutador que está rodando o backend. Exemplo: se está usando roteador wifi, ambos os aparelhos devem estar conectados ao mesmo roteador"
+        />
+
+        <Button
+            android:id="@+id/btn_ip_continue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_explain"
+            android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="32dp"
+            android:text="CONTINUAR"
+            android:textSize="20sp"
+            android:textStyle="bold"
+        />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,7 +34,7 @@ A proposta é desenvolver um frontend mobile (Android) e o backend na arquitetur
 <div id="tech_utilities"></div>
 
 ## ⚙️ Tecnologias utilizadas:
- **✳️ Linux (Ubuntu ou Debian):** para utilizar a ferramentar Docker com mais compatibilidade e executar shell scripts sem maiores dificuldades.<br>
+ **✳️ Linux (Ubuntu ou Debian):** para utilizar a ferramenta Docker com mais compatibilidade e executar shell scripts sem maiores dificuldades.<br>
  **✳️ Docker e docker-compose:** para que o projeto fosse capaz de executar em vários computadores e subir o ambiente de desenvolvimento de maneira mais fácil.<br>
  **✳️ Git e GitHub:** para trabalhar com versões do projeto e manter um repositório online para guardar as atualizações feitas pela equipe de desenvolvimento.<br>
  **✳️ MongoDB:** para criar um banco de dados não relacional que seja capaz de fazer atualizações ou adições de atributos com maior flexibilidade.<br>
@@ -69,7 +69,7 @@ Entre na pasta raiz do repositório **"SigaMobile"** e execute o comando:
 # para executar pela primeira vez
 ./devops/build.sh
 ```
-<p>Aguarde até que o terminal mostre as mensagens abaixo: </p> 
+<p>Aguarde até que o terminal mostre as mensagens abaixo: </p>
 
 ```bash
 [NestApplication] Nest application successfully started +8ms

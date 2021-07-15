@@ -10,7 +10,7 @@ import com.koushikdutta.ion.Ion;
 public class HttpRequests {
 
     public static void apiSigaLogin(Context context, FutureCallback callback, String username, String password){
-        String route = context.getString(R.string.base_url)+context.getString(R.string.api_login_route);
+        String route = ((HostDefinition)context.getApplicationContext()).getLocalIp()+context.getString(R.string.api_login_route);
         JsonObject json = new JsonObject();
         json.addProperty("username", username);
         json.addProperty("password", password);
@@ -24,7 +24,7 @@ public class HttpRequests {
     }
 
     public static void apiCheckRegistration(Context context, FutureCallback callback, String registration, String rg){
-        String route = context.getString(R.string.base_url)+context.getString(R.string.api_check_registration);
+        String route = ((HostDefinition)context.getApplicationContext()).getLocalIp()+context.getString(R.string.api_check_registration);
         JsonObject json = new JsonObject();
         json.addProperty("registration", registration);
         json.addProperty("rg", rg);
@@ -38,7 +38,7 @@ public class HttpRequests {
     }
 
     public static void apiCreateUser(Context context, FutureCallback callback, String username, String password, String studantId){
-        String route = context.getString(R.string.base_url)+context.getString(R.string.api_users_route);
+        String route = ((HostDefinition)context.getApplicationContext()).getLocalIp()+context.getString(R.string.api_users_route);
         JsonObject json = new JsonObject();
         json.addProperty("username", username);
         json.addProperty("passwordHash", password);
