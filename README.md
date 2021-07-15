@@ -108,4 +108,4 @@ Após isso localize o arquivo `api_routes.xml`, localizado no seguinte diretóri
 
 # Documentação do projeto
 Para vizualizar a documentação contendo o protótipo, requisitos funcionais, histórias de usuário e testes de usabilidade acesse o link abaixo: <br>
-**<a href="https://www.notion.so/SigaMobile-274cdacfb6c640928a7c7a4a3738395e" target="_blank">Clique aqui para ver a documentação da aplicação</a>**
+[Clique aqui para ver a documentação da aplicação](https://www.notion.so/SigaMobile-274cdacfb6c640928a7c7a4a3738395e)
