@@ -46,10 +46,10 @@ A proposta é desenvolver um frontend mobile (Android) e o backend na arquitetur
 
 # Requisitos para rodar aplicação:
 ✴️ Docker e docker-compose<br>
-✴️ Sistema operacional Linux (Ubuntu/Debian)<br>
-✴️ Android Studio com Android 10 (API 29) e versão 4.1.1 ou superior do Gradle<br>
+✴️ De preferência sistema operacional Linux (Ubuntu/Debian)<br>
+✴️ Android Studio com **Android 10 (API 29)** e versão **4.1.1** ou superior do **Gradle**. Caso não queira utilizar a IDE basta apenas um celular com **Android 7** ou superior.<br>
 ✴️ O computador que irá executar a aplicação deve estar na mesma rede (Wifi ou USB tethering) que o celular que irá usar o aplicativo<br>
-✴️ Acesso a internet<br>
+✴️ O computador deve ter acesso à internet para baixar as dependências do projeto na primeira execução<br>
 
 <div id="app_exex"></div><br>
 
@@ -78,7 +78,8 @@ Entre na pasta raiz do repositório **"SigaMobile"** e execute o comando:
 [NestMicroservice] Nest microservice successfully started +3ms
 ```
 
-Após isso o backend da aplicação estará sendo executando. Caso queira continuar utilizando o mesmo terminal será necessário executar o seguinte comando: `ctrl+c`.
+Após isso o backend da aplicação estará sendo executando.<br><br> 
+⚠️ Caso queira continuar utilizando o mesmo terminal será necessário executar o seguinte comando: `ctrl+c`. Pode ser que apareça a mensagem `ERROR: Aborting`, porém não se preocupe, a aplicação continuará rodando em background, apenas o script `build.sh` que será encerrado.
 <br>
 
 Caso já tenha executado a aplicação com sucesso anteriomente, pode-se executar os seguintes comandos para iniciar ou parar a execução:<br>
@@ -93,13 +94,15 @@ Caso já tenha executado a aplicação com sucesso anteriomente, pode-se executa
 
 <div id="frontend_exex"></div>
 
-## 📱 Frontend Android
-Execute o Android Studio e certifique-se de ter o **Android 10 (API 29)** disponível na IDE, após isso abra o projeto "frontend-android" que está no diretório raiz do repositório. Aguarde o Gradle baixar as dependências do projeto e sincronizar.<br>
-Após isso localize o arquivo `api_routes.xml`, localizado no seguinte diretório `/frontend-android/app/src/main/res/values`.<br>
+## 📱 Frontend Android <br>
 
-1-  Na linha 4 do arquivo altere o IP e coloque o do seu compudator na rede, seguido da porta do backend da aplicação. Deverá ficar assim:
-`seu.ip.na.rede:4040`.<br>
-2 - Após realizar esta alteração execute a aplicação no Emulador do Android ou instale no seu celular via cabo USB.<br>
+**-> Para executar com o Android Studio<br>**
+1 - Execute o Android Studio e certifique-se de ter o **Android 10 (API 29)** disponível na IDE, após isso abra o projeto **"frontend-android"** que está no diretório raiz do repositório. Aguarde o Gradle baixar as dependências do projeto e sincronizar.<br>
+2 - Conecte seu celular ao computador e espere a IDE identificar o dispositivo, e instale no seu celular via cabo USB. Se preferir também pode ser executado no Emulador do Android<br>
+
+**-> Para executar utilizando o APK<br>**
+Abra a raiz do repositório, conecte seu celular ao computador e copie o arquivo **"siga_mobile.apk"** para o celular. Em seguida execute o APK para instalar o aplicativo.<br>
+Obs.: pode ser que o celular solicite permissão para instalar arquivos de origem desconhecida, basta aceitar a instalação e prosseguir.<br>
 
 <div id="fake_users"></div>
 
@@ -121,7 +124,7 @@ Para utilizar a aplicação você pode usar os dados abaixo:<br><br>
 
 # Documentação do projeto
 Para vizualizar a documentação contendo o protótipo, requisitos funcionais, histórias de usuário e testes de usabilidade acesse o link abaixo: <br>
-[Clique aqui para ver a documentação da aplicação](https://www.notion.so/SigaMobile-274cdacfb6c640928a7c7a4a3738395e) <br>
+[Clique aqui para ver a documentação da aplicação](https://adventurous-weaver-078.notion.site/SigaMobile-274cdacfb6c640928a7c7a4a3738395e) <br>
 
 <div id="team"></div>
 
@@ -129,4 +132,4 @@ Para vizualizar a documentação contendo o protótipo, requisitos funcionais, h
 [Rodrigo Perote](https://github.com/rpm-95) - MIRCROSERVICES | Login, Authorization e criar novo usuário (primeiro acesso) <br>
 [Thalles Kaik](https://github.com/thallesk17) - MIRCROSERVICE | Emitir atestado de Matrícula <br>
 [Bernardo Amazonas](https://github.com/badc-2000) - MIRCROSERVICE | Visualizar notas e horários de aula <br>
-[Gabriel Costa](https://github.com/GabrielCostaSilvaa) - MIRCROSERVICE | Atualização de dados pessoais <br>
+[Gabriel Costa](https://github.com/GabrielCostaSilvaa) - MIRCROSERVICE | Atualização de dados pessoais <br>git
