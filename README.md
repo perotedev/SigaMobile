@@ -1,4 +1,7 @@
 <p align="center">
+  <img src="./.siga_logo_repo.png" width="400">
+</p>
+<p align="center">
   <img src="https://img.shields.io/badge/npm-7.18.1-red"> <img src="https://img.shields.io/badge/node-v16.4.2-green">
   <img src="https://img.shields.io/badge/nestjs-v7.6.0-green"> <img src="https://img.shields.io/badge/android-API%2029-green">
   <img src="https://img.shields.io/badge/mongoose-7.2.4-yellowgreen"> <img src="https://img.shields.io/badge/jwt-7.2.0-red">
