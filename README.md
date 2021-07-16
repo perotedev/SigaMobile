@@ -132,9 +132,9 @@ Caso queira acessar o MongoDB via terminal, na raiz do repositório execute o se
 # para iniciar o bash do MongoDB
 ./devops/mongobash.sh
 ```
-<br>
+⚠️ O comando acima só funciona enquanto os containers estiverem sendo executados.<br>
 
-<div id="documentation"></div>
+<div id="documentation"></div><br>
 
 # Documentação do projeto
 Para vizualizar a documentação contendo o protótipo, requisitos funcionais, histórias de usuário e testes de usabilidade acesse o link abaixo: <br>
