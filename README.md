@@ -17,6 +17,7 @@
 <a href="#backend_exex">---| 4.1 - Backend NestJS</a><br>
 <a href="#frontend_exex">---| 4.2 - Frontend Android</a><br>
 <a href="#fake_users">---| 4.3 - Logins de Teste</a><br>
+<a href="#mongo_db">---| 4.4 - Acesso ao MongoDB</a><br>
 **<a href="#documentation">5 - Documentação da aplicação</a>**<br>
 **<a href="#team">6 - Authors</a>**<br>
 
@@ -109,15 +110,28 @@ Obs.: pode ser que o celular solicite permissão para instalar arquivos de orige
 ## 🧑 Logins para teste<br>
 Para utilizar a aplicação você pode usar os dados abaixo:<br><br>
 -> Usuário já cadastrado no sistema:<br>
+--| **nome:** `João Melo da Costa` <br>
 --| **usuário:** `joaomelo`<br>
 --| **senha:** `password`<br>
 --| **matrícula:** `2019025996`<br>
 --| **rg:** `358867`
 
 -> Usuário a ser cadastrado (primeiro acesso):<br>
+--| **nome:** `Eduarda Souza Campos` <br>
 --| **matrícula:** `2019025096`<br>
---| **rg:** `448868`
+--| **rg:** `448868`<br>
 
+⚠️ No primeiro acesso o aluno irá se cadastrar no sistema, criando seu login e senha. O sistema só deve aceitar o cadastro de alunos matrículados, para fazer esta verificação é utilizado a matrícula e o RG do aluno.<br>
+
+<div id="mongo_db"></div>
+
+## 📦 Acesso ao MongoDB<br>
+Caso queira acessar o MongoDB via terminal, na raiz do repositório execute o seguinte comando:
+
+```bash
+# para iniciar o bash do MongoDB
+./devops/mongobash.sh
+```
 <br>
 
 <div id="documentation"></div>
