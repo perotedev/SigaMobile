@@ -146,7 +146,9 @@ Para vizualizar a documentação contendo o protótipo, requisitos funcionais, h
 <div id="team"></div>
 
 # Authors <br>
-[Rodrigo Perote](https://github.com/rpm-95) - MIRCROSERVICES | Login, Authorization e criar novo usuário (primeiro acesso) <br>
-[Thalles Kaik](https://github.com/thallesk17) - MIRCROSERVICE | Emitir atestado de Matrícula <br>
-[Bernardo Amazonas](https://github.com/badc-2000) - MIRCROSERVICE | Visualizar notas e horários de aula <br>
-[Gabriel Costa](https://github.com/GabrielCostaSilvaa) - MIRCROSERVICE | Atualização de dados pessoais <br>git
+[Rodrigo Perote - 2019003207](https://github.com/rpm-95) - MIRCROSERVICES: <br>
+**1 | Login e Autenticação:** O serviço de login gera um token JWT, a validação do usuário acontece por meio de consulta ao banco de dados e para validar o JWT foi usado o padrão Strategy. Este serviço também é utilizado para adiconar essa validação para o uso dos demais serviços através do Decorator, desta maneira o usuário precisa estar autenticado para acessar os outros serviços. <br>
+**2 | Criar novo usuário (primeiro acesso):** A criação de um usuário no sistema ocorre no primeiro acesso e só pode ser efetuada se o aluno estiver matriculado na instituição, desta forma o serviço checa se o usuário está matrículado e previne a criação de usernames repetidos ou que um aluno crie mais de um usuário. Este serviço utiliza o Decorator de autenticação do JWT nos endpoints do cliente.<br><br>
+[Thalles Kaik - 2019003898](https://github.com/thallesk17) - MIRCROSERVICE | Emitir atestado de Matrícula <br>
+[Bernardo Amazonas - 2019002999](https://github.com/badc-2000) - MIRCROSERVICE | Visualizar notas e horários de aula <br>
+[Gabriel Costa - 2019003922](https://github.com/GabrielCostaSilvaa) - MIRCROSERVICE | Atualização de dados pessoais <br>git
