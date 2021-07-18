@@ -11,7 +11,8 @@ import { UsersModule } from './services/users/users.module';
     MongooseModule.forRoot('mongodb://root:example@siga-mongo:27017/sigadatabase?authSource=admin'),
     AuthModule,
     UsersModule,
-    StudantsModule
+    StudantsModule,
+    AssociateModule
   ],
   controllers: [
     AppController
