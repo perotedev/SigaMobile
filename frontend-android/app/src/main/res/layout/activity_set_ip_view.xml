@@ -50,10 +50,20 @@
         />
 
         <TextView
-            android:id="@+id/text_explain"
+            android:id="@+id/text_ip_explain"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_ip"
+            android:layout_marginTop="5dp"
+            android:layout_marginHorizontal="32dp"
+            android:text="*Digite incluindo os pontos. Ex.: 192.168.0.1"
+            />
+
+        <TextView
+            android:id="@+id/text_explain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_ip_explain"
             android:layout_marginTop="20dp"
             android:layout_marginHorizontal="32dp"
             android:text="Tenha certeza que o seu celular esteja na mesma rede do comutador que está rodando o backend. Exemplo: se está usando roteador wifi, ambos os aparelhos devem estar conectados ao mesmo roteador"
