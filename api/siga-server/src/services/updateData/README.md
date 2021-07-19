@@ -1,4 +1,4 @@
 Microservice: Atualizar dados pessoais do banco - SigaMobile
 Dev: Gabriel Costa Silva
 
-crud.js - deletado
+Os dados que serão foco na atualização de dados: Endereço, Número e dados bancários.

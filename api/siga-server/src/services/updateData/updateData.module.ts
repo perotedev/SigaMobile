@@ -4,11 +4,11 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { EnderecoSchema } from '../../schemas/endereco.schema';
 import { TelefoneSchema } from '../../schemas/telefone.schema';
 import { ContaBancoSchema } from '../../schemas/conta-banco.schema';
-import { UsersService } from './users.service';
-import { UsersGrpcServerController } from './users-grpc-server/users-grpc-server.controller';
+import { updateDataService } from './updateData.service';
+import { updateDataGrpcServerController } from './updateData-grpc-server/updateData-grpc-server.controller';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { join } from 'path';
-import { UsersGrpcClientController } from 'src/controllers/users-grpc-client/users-grpc-client.controller';
+import { updateDataGrpcClientController } from 'src/controllers/updateData-grpc-client/updateData-grpc-client.controller';
 
 @Module({
   imports:[
@@ -19,7 +19,7 @@ import { UsersGrpcClientController } from 'src/controllers/users-grpc-client/use
       options: {
         url: 'siga-server:50051',
         package: 'updateData',
-        protoPath: join(__dirname, '/proto/users.proto')
+        
       }
     }])
   ],
@@ -30,4 +30,6 @@ import { UsersGrpcClientController } from 'src/controllers/users-grpc-client/use
   providers: [updateDataService],
   exports: [updateDataService],
 })
+
+
 export class updateData {}
