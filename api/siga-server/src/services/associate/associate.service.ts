@@ -11,7 +11,7 @@ export class AssociateService {
         @InjectModel(Tasks) private readonly tasksModel: Model<Tasks>;
     )
 
-    asyn getAssociated() {
+    asyn getAssociatedGrades() {
         const associated = await this.
     }
 }
