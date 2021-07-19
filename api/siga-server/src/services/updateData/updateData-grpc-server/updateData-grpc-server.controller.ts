@@ -6,11 +6,6 @@ import { UsersService } from '../users.service';
 export class updateDataGrpcServerController {
     constructor(private updateDataService: updateDataService) {}
 
-    @GrpcMethod('updateService', 'Create')
-    create(data){
-        return this.updateDataService.create(data);
-    };
-
     @GrpcMethod('UpdateService', 'FindAll')
     async findAll(data){
         const users = await this.updateDataService.getAll();
@@ -25,10 +20,5 @@ export class updateDataGrpcServerController {
     @GrpcMethod('UpdateService', 'Update')
     update(data){
         return this.updateDataService.update(data);
-    };
-
-    @GrpcMethod('UpdateService', 'Delete')
-    delete(data){
-        return this.updateDataService.delete(data.id);
     };
 }
