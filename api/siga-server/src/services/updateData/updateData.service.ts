@@ -9,7 +9,7 @@ import * as bcrypt from 'bcrypt';
 @Injectable()
 export class updateDataService {
     constructor(@InjectModel(EnderecoSchema.name) private readonly enderecoModel: Model<endereco>, 
-                @InjectModel(TelefoneSchema.name) private readonly numeroModel: Model<numero>,
+                @InjectModel(TelefoneSchema.name) private readonly telefoneModel: Model<telefone>,
                 @InjectModel (ContaBancoSchema.name) private readonly contaBancoModel: Model<contaBanco>
     
     ) {}
@@ -18,8 +18,8 @@ export class updateDataService {
         return this.enderecoModel.findOne({ 'endereco': endereco }).exec();
     }
 
-    async updateNumero(numero: string) {
-        return this.numeroModel.findOne({ 'numero': numero }).exec();
+    async updateNumero(telefone: string) {
+        return this.telefoneModel.findOne({ 'telefone': telefone }).exec();
     }
 
     async updateDados(contaBanco: string) {

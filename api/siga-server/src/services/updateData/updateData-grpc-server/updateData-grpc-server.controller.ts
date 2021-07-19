@@ -1,24 +1,24 @@
 import { Controller } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
-import { UsersService } from '../users.service';
+import { updateDataService } from '../updateData.service';
 
 @Controller()
 export class updateDataGrpcServerController {
-    constructor(private updateDataService: updateDataService) {}
+    constructor(private updateDataService: updateDataService){}
 
-    @GrpcMethod('UpdateService', 'FindAll')
-    async findAll(data){
-        const users = await this.updateDataService.getAll();
-        return { update };
-    };
-
-    @GrpcMethod('UpdateService', 'GetById')
-    getById(data){
-        return this.updateDataService.getById(data.id);
+    @GrpcMethod('UpdateService', 'Update')
+    updateEndereco(data){
+        return this.updateDataService.updateEndereco(data);
     };
 
     @GrpcMethod('UpdateService', 'Update')
-    update(data){
-        return this.updateDataService.update(data);
+    updateNumero(data){
+
+        return this.updateDataService.updateNumero(data);
+    };
+
+    @GrpcMethod('UpdateService', 'Update')
+    updateDados(data){
+        return this.updateDataService.updateDados(data);
     };
 }
