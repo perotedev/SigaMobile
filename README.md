@@ -44,7 +44,7 @@ A proposta é desenvolver um frontend mobile (Android) e o backend na arquitetur
  **✳️ MongoDB:** para criar um banco de dados não relacional que seja capaz de fazer atualizações ou adições de atributos com maior flexibilidade.<br>
  **✳️ NPM:** para utilizar o framework NestJs e gerenciar as dependências do projeto.<br>
  **✳️ Android:** para desenvolver o frontend foi escolhido o Android 10 (API 29), com programação nativa em java, utilizando o gerenciador de pacotes Gradle.<br>
- **✳️ Framework NestJS:** utilizando a linguagem TypeScript, foi escolhido porque apesar de ser um framework recente, foi desenvolvido para ser compatível com novas tecnologias. Na área de microsserviços possui compatibilidade com o **Redis, MQTT, NATS, RabbitMQ, Kafka, gRPC**, além de ter libs para transporters, pipes, guards e interceptors. O gerenciador de microsserviços utilizado neste projeto é o gRPC. O NestJs também tem como padrão próprio o uso de padrões de projetos, utilizando Factory para criar os módulos, Decorator para adicionar funcionalidades em outras classes, como por exemplo a autenticação por JWT para acessar uma API, Strategy para utilizar classes padrões da ferramenta, dentre outros.<br><br>
+ **✳️ Framework NestJS:** utilizando a linguagem TypeScript, foi escolhido porque apesar de ser um framework recente, foi desenvolvido para ser compatível com novas tecnologias. Na área de microsserviços possui compatibilidade com o **Redis, MQTT, NATS, RabbitMQ, Kafka, gRPC**, além de ter libs para transporters, pipes, guards e interceptors. O gerenciador de microsserviços utilizado neste projeto é o **gRPC**. O NestJs também tem como padrão próprio o uso de padrões de projetos, utilizando Factory para criar os módulos, Decorator para adicionar funcionalidades em outras classes, como por exemplo a autenticação por JWT para acessar uma API, Strategy para utilizar classes padrões da ferramenta, dentre outros.<br><br>
 
 <div id="requireds"></div>
 
@@ -82,7 +82,7 @@ Entre na pasta raiz do repositório **"SigaMobile"** e execute o comando:
 [NestMicroservice] Nest microservice successfully started +3ms
 ```
 
-Após isso o backend da aplicação estará sendo executando.<br><br> 
+Após isso o backend da aplicação estará sendo executada.<br><br> 
 ⚠️ Caso queira continuar utilizando o mesmo terminal será necessário executar o seguinte comando: `ctrl+c`. Pode ser que apareça a mensagem `ERROR: Aborting`, porém não se preocupe, a aplicação continuará rodando em background, apenas o script `build.sh` que será encerrado.
 <br>
 
@@ -106,7 +106,7 @@ Caso já tenha executado a aplicação com sucesso anteriomente, pode-se executa
 
 **-> Para executar utilizando o APK<br>**
 Abra a raiz do repositório, conecte seu celular ao computador e copie o arquivo **"siga_mobile.apk"** para o celular. Em seguida execute o APK para instalar o aplicativo.<br>
-Obs.: pode ser que o celular solicite permissão para instalar arquivos de origem desconhecida, basta aceitar a instalação e prosseguir.<br>
+⚠️ Pode ser que o celular solicite permissão para instalar arquivos de origem desconhecida, basta aceitar a instalação e prosseguir.<br>
 
 <div id="fake_users"></div>
 
